@@ -2584,7 +2584,26 @@ None.
 # Group Trade-F&O
 Data Objects and endpoints providing access to and creation of Futures and Options Trades.
 
-## F&O Trades List [/FandO/{TradingEntityId}/FuturesandOptions/Trade/Property/PropertyValue]
+## F&O Trade Create [/FandO/{TradingEntityId}/FuturesandOptions/Trade]
+`POST` Allows Futures and Options Trade to be created
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TradeDate|Trade Date|`datetime`|||Required|
+|||||||
+|||||||
+|||||||
+|||||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+
+
+
+## F&O Trades List [/FandO/{TradingEntityId}/FuturesandOptions/Trade/{Property}/{PropertyValue}]
 `GET` List of Futures and Options Trades
 ### List F&O Trades [GET]
 
@@ -2610,7 +2629,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 
 
 
-## F&O Trade [/FandO/{TradingEntityId}/FuturesandOptions/Trade/UniqueNo]
+## F&O Trade [/FandO/{TradingEntityId}/FuturesandOptions/Trade/{UniqueNo}]
 `GET` Futures and Options Trade
 ### Read F&O Trade [GET]
 
@@ -2630,12 +2649,12 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
     + UniqueNo (required, number, `12345`)
 
 
-### Create F&O Trade [POST]
-`POST` Allows Futures and Options Trade to be created
+### Update F&O Trade [PATCH] 
+`PATCH` Allows Futures and Options Trade to be amended
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TradeDate|Trade Date|`datetime`|||Required|
+|UniqueNo|Unique Number|`number`|||Required|
 |||||||
 |||||||
 |||||||
@@ -2646,9 +2665,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
     
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-
-
-
+    + UniqueNo (required, number, `12345`)
 
 
 # Group Data Object Definitions
