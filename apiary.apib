@@ -2079,7 +2079,6 @@ None.
     + Attributes (404 Response)
 
 
-
 # Group Inventory-Physicals-Order Scheduling
 Production Order scheduling services.
 
@@ -2580,6 +2579,75 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
+
+# Group Trade-F&O
+Data Objects and endpoints providing access to and creation of Futures and Options Trades.
+
+## F&O Trades List [/FandO/{TradingEntityId}/FuturesandOptions/Trade/Property/PropertyValue]
+`GET` List of Futures and Options Trades
+### List F&O Trades [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|UniqueNo|Unique Number|`number`|||Required|
+|||||||
+|||||||
+|||||||
+|||||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + UniqueNo 
+            + ClientAccountId
+            + DepartmentCode
+    + PropertyValue (optional, string, `12345`) ... required if property specified.
+
+
+
+## F&O Trade [/FandO/{TradingEntityId}/FuturesandOptions/Trade/UniqueNo]
+`GET` Futures and Options Trade
+### Read F&O Trade [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|UniqueNo|Unique Number|`number`|||Required|
+|||||||
+|||||||
+|||||||
+|||||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + UniqueNo (required, number, `12345`)
+
+
+### Create F&O Trade [POST]
+`POST` Allows Futures and Options Trade to be created
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TradeDate|Trade Date|`datetime`|||Required|
+|||||||
+|||||||
+|||||||
+|||||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+
+
 
 
 
