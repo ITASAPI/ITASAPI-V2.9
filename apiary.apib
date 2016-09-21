@@ -377,6 +377,36 @@ Global (system-wide) codes
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+## Instrument List [/ReferenceData/Global/Instrument/{Property}/{PropertyValue}]
+`GET` Currency codes.
+### List Instruments [GET]
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|InstrumentId|Instrument ID|`string`|8|||
+|InstrumentDescription|Instrument ID Description|`string`|60|||
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + Property (optional, enum[string]) 
+       + Members
+            + Instrument
+    + PropertyValue (optional, string, `NY11`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (array [Instrument])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadPropertyResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 ## UserAccount List  [/ReferenceData/Global/UserAccount/{Property}/{PropertyValue}]
 `GET` ITAS User Account profiles.
 ### List User Accounts [GET]
@@ -3175,6 +3205,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TrailerRegistration: YRS 386L (string)
 + EarlyLoadAllowed: `true` (boolean)
 + MaxLoadWeight: 123 (number) 
+
+## Instrument (object)
++ InstrumentId: NY11 (string)
++ InstrumentDescription: ICE US SUGAR (string)
 
 ## MasterData (object)
 + TradingEntity (MasterDataTradingEntityId)  
