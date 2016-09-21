@@ -2737,6 +2737,18 @@ A multipurpose object used by several endpoints
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
 
+## Trade Code [/TradeCode]
+A multipurpose object used by several endpoints
+### TradeCode[GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|Code|Trade Code|string|3|||
+|CodeDescription|Trade Code Description|string|60|||
+
++ Response 200 (application/json; charset=utf-8)
++ Attributes (TradeCode)
+
 ## TradingEntity [/TradingEntity]
 A multipurpose object used by several endpoints
 ### TradingEntity[GET]
@@ -3514,6 +3526,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TerminalId: ADEL (string)
 + TerminalDescription: `Santos-Santa Adelia` (string)
 + CountryId: BRA (string)
+
+## TradeCode (object)
++ Code: AA (string)
++ CodeDescription: Against Actuals (string)
 
 ## TransactionBankAccount (object)
 + DocumentReference: CN1600001 (required, string)
