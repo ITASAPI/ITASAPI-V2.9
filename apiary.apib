@@ -2610,6 +2610,114 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
+# Group Trade-F&O
+Data Objects and endpoints providing access to and creation of Futures and Options Trades.
+
+
+## F&O Trades List [/FandO/{TradingEntityId}/FuturesandOptions/Trade/Property/PropertyValue]
+`GET` List of Futures and Options Trades
+### List F&O Trades [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|UniqueNo|Unique Number|`number`|||Required|
+|SerialNo|Serial Number|`number`||||
+|TradeDate|Trade Date|`datetime`||||
+|AccountCode|Account Code|`string`|11|||
+|Code|Trade Code|`string`||||
+|DepartmentCode|Department Code|`string`||||
+|InstrumentCode|Instrument Code|`string`||||
+|PromptMonth|Prompt Month|`datetime`||||
+|Instruction|Instruction|`string`||||
+|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
+|OptionSeries|Option Series|`string`||||
+|BuySell|Buy or Sell|`string`|1||`B` or `S`|
+|Lots|Lots|`number`|||Greater than `0`|
+|PhysRef|Physical Reference|`string`||||
+|BrokerCode|Broker Account|`string`|11|||
+|Price|Price|`number`||||
+|FloorBrokerCode|Floor Broker Account Code||`string`|11||
+|TraderCode|Trader Code|`string`|3|||
+|Memo|Memorandum|`string`||||
+|StrategyCode|Strategy Code|`string`||||
+|StrategyGroup|Strategy Group|`string`||||
+|Memo2|Memorandum 2|`string`||||
+|ExternalSerial|External Serial|`string`||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + UniqueNo 
+            + ClientAccountId
+            + DepartmentCode
+    + PropertyValue (optional, string, `12345`) ... required if property specified.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (array [F&OTradeList])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadPropertyResponse)
+    
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
+
+## F&O Trade [/FandO/{TradingEntityId}/FuturesandOptions/Trade/{UniqueNo}]
+`GET` Futures and Options Trade
+### Read F&O Trade [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|UniqueNo|Unique Number|`number`|||Required|
+|SerialNo|Serial Number|`number`||||
+|TradeDate|Trade Date|`datetime`||||
+|Account|Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|Code|Code delivered as an <b><a href="/#reference/data-object-definitions/tradecode">TradeCode</a></b> object|`object`||||
+|Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> endpoint|`object`||||
+|Instrument|see <b><a href="/#reference/global-reference-data/instrument-list">Instrument List</a></b> endpoint|`object`||||
+|PromptMonth|Prompt Month|`datetime`||||
+|Instruction|Instruction|`string`||||
+|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
+|OptionSeries|Option Series|`string`||||
+|BuySell|Buy or Sell|`string`|1||`B` or `S`|
+|Lots|Lots|`number`|||Greater than `0`|
+|PhysRef|Physical Reference|`string`||||
+|Broker|Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
+|Price|Price|`number`||||
+|FloorBroker|Floor Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object||`object`|||
+|Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
+|Memo|Memorandum|`string`||||
+|StrategyCode|Strategy Code|`string`||||
+|StrategyGroup|Strategy Group|`string`||||
+|Memo2|Memorandum 2|`string`||||
+|ExternalSerial|External Serial|`string`||||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + UniqueNo (required, number, `12345`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (F&OTrade)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
 
 # Group Data Object Definitions
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
@@ -3217,6 +3325,57 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TrailerRegistration: YRS 386L (string)
 + EarlyLoadAllowed: `true` (boolean)
 + MaxLoadWeight: 123 (number) 
+
+## F&OTrade (object)
++ UniqueNo: 123 (number)
++ SerialNo: 123 (number)
++ TradeDate: `2015-07-01T00:00:00Z` (string)
++ Account (AccountHeaderC)
++ Code (TradeCode)
++ Department (Department)
++ InstrumentCode (Instrument)
++ PromptMonth: `2015-07-01T00:00:00Z` (string)
++ Instruction: ABC DEF (string)
++ OptionType: C (string)
++ OptionSeries: ABC (string)
++ BuySell: B (string)
++ Lots: 100 (number)
++ PhysRef: ABCDEF.STK (string)
++ Broker (AccountHeaderC)
++ Price: 12345 (number)
++ FloorBroker (AccountHeaderC)
++ Trader (UserAccount)
++ Memo: AB CD EF (string)
++ StrategyCode: P1 (string)
++ StrategyGroup: PORT (string)
++ Memo2: GHI JKL (string)
++ ExternalSerial: ABCD (string)
+
+
+## F&OTradeList (object)
++ UniqueNo: 123 (number)
++ SerialNo: 123 (number)
++ TradeDate: `2015-07-01T00:00:00Z` (string)
++ AccountCode: ABCDEF.P (string)
++ Code: AA (string)
++ DepartmentCode: 5100 (string)
++ InstrumentCode: NY11 (string)
++ PromptMonth: `2015-07-01T00:00:00Z` (string)
++ Instruction: ABC DEF (string)
++ OptionType: C (string)
++ OptionSeries: ABC (string)
++ BuySell: B (string)
++ Lots: 100 (number)
++ PhysRef: ABCDEF.STK (string)
++ BrokerCode: ABCDEF.P (string)
++ Price: 12345 (number)
++ FloorBrokerCode: ABCDEF.P (string)
++ TraderCode: TT (string)
++ Memo: AB CD EF (string)
++ StrategyCode: P1 (string)
++ StrategyGroup: PORT (string)
++ Memo2: GHI JKL (string)
++ ExternalSerial: ABCD (string)
 
 ## Instrument (object)
 + InstrumentId: NY11 (string)
