@@ -1728,26 +1728,26 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |--------|-----------|----|----------|-----|----------|
 |SerialNo|Serial Number|`number`||||
 |TradeDate|Trade Date|`datetime`|||Required|
-|AccountCode|Account Code|`string`|11||Required|
-|Code|Trade Code|`string`|||Required|
-|DepartmentCode|Department Code|`string`|||Required|
-|InstrumentCode|Instrument Code|`string`|||Required|
+|AccountCode|Account Code|`string`|10||Required|
+|Code|Trade Code|`string`|3||Required|
+|DepartmentCode|Department Code|`string`|4||Required|
+|InstrumentCode|Instrument Code|`string`|8||Required|
 |PromptMonth|Prompt Month|`datetime`|||Required|
-|Instruction|Instruction|`string`||||
+|Instruction|Instruction|`string`|1|||
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
-|OptionSeries|Option Series|`string`||||
+|OptionSeries|Option Series|`number`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
 |Lots|Lots|`number`|||Required. Greater than `0`|
-|PhysRef|Physical Reference|`string`||||
-|BrokerCode|Broker Account|`string`|11||Required|
+|PhysRef|Physical Reference|`string`|11|||
+|BrokerCode|Broker Account|`string`|10||Required|
 |Price|Price|`number`|||Required|
-|FloorBrokerCode|Floor Broker Account Code|`string`|11|||
+|FloorBrokerCode|Floor Broker Account Code|`string`|10|||
 |TraderCode|Trader Code|`string`|3||Required|
-|Memo|Memorandum|`string`||||
-|StrategyCode|Strategy Code|`string`||||
-|StrategyGroup|Strategy Group|`string`||||
-|Memo2|Memorandum 2|`string`||||
-|ExternalSerial|External Serial|`string`||||
+|Memo|Memorandum|`string`|120|||
+|StrategyCode|Strategy Code|`string`|15|||
+|StrategyGroup|Strategy Group|`string`|15|||
+|Memo2|Memorandum 2|`string`|20|||
+|ExternalSerial|External Serial|`string`|10|||
 
 
 + Parameters
@@ -1781,14 +1781,14 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |UniqueId|Unique ID|`number`|||Required|
 |SerialNo|Serial Number|`number`||||
 |TradeDate|Trade Date|`datetime`||||
-|AccountCode|Account Code|`string`|11|||
-|Code|Trade Code|`string`||||
-|DepartmentCode|Department Code|`string`||||
-|InstrumentCode|Instrument Code|`string`||||
-|BrokerCode|Broker Account|`string`|11|||
-|FloorBrokerCode|Floor Broker Account Code|`string`|11|||
+|AccountCode|Account Code|`string`|10|||
+|Code|Trade Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
+|InstrumentCode|Instrument Code|`string`|8|||
+|BrokerCode|Broker Account|`string`|10|||
+|FloorBrokerCode|Floor Broker Account Code|`string`|10|||
 |TraderCode|Trader Code|`string`|3|||
-|StrategyCode|Strategy Code|`string`||||
+|StrategyCode|Strategy Code|`string`|15|||
 
 + Request
     [AccessToken][]
@@ -1837,21 +1837,21 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> endpoint|`object`||||
 |Instrument|see <b><a href="/#reference/global-reference-data/instrument-list">Instrument List</a></b> endpoint|`object`||||
 |PromptMonth|Prompt Month|`datetime`||||
-|Instruction|Instruction|`string`||||
+|Instruction|Instruction|`string`|1|||
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
-|OptionSeries|Option Series|`string`||||
+|OptionSeries|Option Series|`number`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
 |Lots|Lots|`number`|||Greater than `0`|
-|PhysRef|Physical Reference|`string`||||
+|PhysRef|Physical Reference|`string`|11|||
 |Broker|Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |Price|Price|`number`||||
 |FloorBroker|Floor Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
-|Memo|Memorandum|`string`||||
-|StrategyCode|Strategy Code|`string`||||
-|StrategyGroup|Strategy Group|`string`||||
-|Memo2|Memorandum 2|`string`||||
-|ExternalSerial|External Serial|`string`||||
+|Memo|Memorandum|`string`|120|||
+|StrategyCode|Strategy Code|`string`|15|||
+|StrategyGroup|Strategy Group|`string`|15|||
+|Memo2|Memorandum 2|`string`|20|||
+|ExternalSerial|External Serial|`string`|10|||
 
 + Request
     [AccessToken][]
@@ -1878,8 +1878,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |UniqueId|Unique ID|`number`|||Required|
-|Memo|Memorandum|`string`||||
-|Memo2|Memorandum 2|`string`||||
+|Memo|Memorandum|`string`|120|||
+|Memo2|Memorandum 2|`string`|20|||
 
 + Request (application/json)
     + Header
@@ -3417,7 +3417,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + PromptMonth: `2015-07-01T00:00:00Z` (string)
 + Instruction: ABC DEF (string)
 + OptionType: C (string)
-+ OptionSeries: ABC (string)
++ OptionSeries: 123 (number)
 + BuySell: B (string)
 + Lots: 100 (number)
 + PhysRef: ABCDEF.STK (string)
@@ -3441,7 +3441,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + PromptMonth: `2015-07-01T00:00:00Z` (string)
 + Instruction: ABC DEF (string)
 + OptionType: C (string)
-+ OptionSeries: ABC (string)
++ OptionSeries: 123 (number)
 + BuySell: B (string)
 + Lots: 100 (number)
 + PhysRef: ABCDEF.STK (string)
