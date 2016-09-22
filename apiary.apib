@@ -2719,6 +2719,59 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
     + Attributes (404 Response)
 
 
+### Create F&O Trade [POST]
+`POST` Allows Futures and Options Trade to be created
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|UniqueNo|Unique Number|`number`|||Required|
+|SerialNo|Serial Number|`number`||||
+|TradeDate|Trade Date|`datetime`||||
+|AccountCode|Account Code|`string`|11|||
+|Code|Trade Code|`string`||||
+|DepartmentCode|Department Code|`string`||||
+|InstrumentCode|Instrument Code|`string`||||
+|PromptMonth|Prompt Month|`datetime`||||
+|Instruction|Instruction|`string`||||
+|OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
+|OptionSeries|Option Series|`string`||||
+|BuySell|Buy or Sell|`string`|1||`B` or `S`|
+|Lots|Lots|`number`|||Greater than `0`|
+|PhysRef|Physical Reference|`string`||||
+|BrokerCode|Broker Account|`string`|11|||
+|Price|Price|`number`||||
+|FloorBrokerCode|Floor Broker Account Code|`string`|11|||
+|TraderCode|Trader Code|`string`|3|||
+|Memo|Memorandum|`string`||||
+|StrategyCode|Strategy Code|`string`||||
+|StrategyGroup|Strategy Group|`string`||||
+|Memo2|Memorandum 2|`string`||||
+|ExternalSerial|External Serial|`string`||||
+
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (F&OTradeCreate)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (UniqueNoResponse)
+        + Response (201 CreateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
+
 # Group Data Object Definitions
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
 
@@ -3351,6 +3404,31 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Memo2: GHI JKL (string)
 + ExternalSerial: ABCD (string)
 
+## F&OTradeCreate (object)
++ UniqueNo: 123 (number)
++ SerialNo: 123 (number)
++ TradeDate: `2015-07-01T00:00:00Z` (string)
++ AccountCode: ABCDEF.P (string)
++ Code: AA (string)
++ DepartmentCode: 5100 (string)
++ InstrumentCode: NY11 (string)
++ PromptMonth: `2015-07-01T00:00:00Z` (string)
++ Instruction: ABC DEF (string)
++ OptionType: C (string)
++ OptionSeries: ABC (string)
++ BuySell: B (string)
++ Lots: 100 (number)
++ PhysRef: ABCDEF.STK (string)
++ BrokerCode: ABCDEF.P (string)
++ Price: 12345 (number)
++ FloorBrokerCode: ABCDEF.P (string)
++ TraderCode: TT (string)
++ Memo: AB CD EF (string)
++ StrategyCode: P1 (string)
++ StrategyGroup: PORT (string)
++ Memo2: GHI JKL (string)
++ ExternalSerial: ABCD (string)
+
 
 ## F&OTradeList (object)
 + UniqueNo: 123 (number)
@@ -3720,6 +3798,9 @@ The CommodityFullCode is a five part key made up of the following values seperat
 
 ## TransactionKey (object)
 + TransactionKey: 00040444.P||GBP||20150832||20151003||14576460 (string)
+
+## UniqueNoResponse (object)
++ UniqueNo: 123 (number)
 
 ## UnPostedTransaction (object)
 + DocumentReference: CN1600001 (string)
