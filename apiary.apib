@@ -8,14 +8,17 @@ VERSION: 2.8
 <div>~ New endpoints added in this release :</div>
 <div>
 <ul>
-<li>Master Reference Data <strong>Read Master Data</strong>: GET Master Data access to various Data objects<a href="/#reference/master-reference-data/master-data/read-master-data"> Link</a></li>
-
+<li>Global Reference Data <strong>Instrument List</strong>: GET Instrument Codes<a href="/#reference/global-reference-data/instrument-list"> Link</a></li>
+<li>Contract-F&O <strong>F&O Trade Create</strong>: POST Allows Futures and Options Trade to be created<a href="/#reference/contract-f&o/fo-trade-create"> Link</a></li>
+<li>Contract-F&O <strong>F&O Trade List</strong>: GET List of Futures and Options Trades<a href="/#reference/contract-f&o/fo-trade-list"> Link</a></li>
+<li>Contract-F&O <strong>F&O Trade</strong>: GET Futures and Options Trade<a href="/#reference/contract-f&o/fo-trade"> Link</a></li>
+<li>Contract-F&O <strong>F&O Trade</strong>: PATCH Allows sections of a Futueres and Options Trade to be updated<a href="/#reference/contract-f&o/fo-trade/delta-update-f&o-trade"> Link</a></li>
 </ul>
 <br />
 </div>
 <div>~ Updated endpoints :</div>
 <ul>
-<li>Accounting-Transactions <b>Posted Transaction</b>: Addtional property VatTurnover now included when read</li>
+<li>read</li>
 </ul>
 <br />
 <div>** ends ** </div>
@@ -1780,7 +1783,6 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |--------|-----------|----|----------|-----|----------|
 |UniqueId|Unique ID|`number`|||Required|
 |SerialNo|Serial Number|`number`||||
-|TradeDate|Trade Date|`datetime`||||
 |AccountCode|Account Code|`string`|10|||
 |Code|Trade Code|`string`|3|||
 |DepartmentCode|Department Code|`string`|4|||
@@ -1873,7 +1875,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 
 
 ### Delta Update F&O Trade [PATCH] 
-`PATCH` Allows sections of a Futures and Options Trade to be amended
+`PATCH` Allows sections of a Futures and Options Trade to be updated
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
