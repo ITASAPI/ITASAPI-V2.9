@@ -1875,6 +1875,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ### Delta Update F&O Trade [PATCH] 
 `PATCH` Allows sections of a Futures and Options Trade to be updated
@@ -3788,7 +3790,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CountryId: BRA (string)
 
 ## TradeCode (object)
-+ Code: AA (string)
++ CodeId: AA (string)
 + CodeDescription: Against Actuals (string)
 
 ## TransactionBankAccount (object)
