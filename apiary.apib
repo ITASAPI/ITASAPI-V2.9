@@ -85,7 +85,8 @@ Codes relating to the Client Ledger and related endpoints.
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 BadPropertyResponse)
     
-
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## ClientAccount [/ReferenceData/{TradingEntityId}/ClientLedger/ClientAccount/{ClientAccountId}]
 `GET` Client Ledger Account profile.
@@ -142,6 +143,8 @@ Codes relating to the Client Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 ### Create Update ClientAccount [PUT]
@@ -217,6 +220,9 @@ Codes relating to the Client Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ### Delta Update ClientAccount [PATCH]
 `PATCH` Delta Update is to be used to update ClientAcount, where the field `ClientAccountId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
 
@@ -283,6 +289,9 @@ Codes relating to the Client Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## ClientType List [/ReferenceData/{TradingEntityId}/ClientLedger/ClientType/{Property}/{PropertyValue}]
 `GET` User-defined list of codes used for classification purposes on Client Account profile.
 
@@ -308,14 +317,15 @@ Codes relating to the Client Ledger and related endpoints.
         + Data (array [ClientType List])
         + Pagination (Pagination)
         + Response (200 SuccessResponse)
-
-
     
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 BadPropertyResponse)
   
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 # Group Global Reference Data
@@ -351,6 +361,9 @@ Global (system-wide) codes
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Currency List [/ReferenceData/Global/Currency/{Property}/{PropertyValue}]
 `GET` Currency codes.
 ### List Currencies [GET]
@@ -379,6 +392,9 @@ Global (system-wide) codes
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Instrument List [/ReferenceData/Global/Instrument/{Property}/{PropertyValue}]
 `GET` Instrument codes.
@@ -411,6 +427,8 @@ Global (system-wide) codes
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## UserAccount List  [/ReferenceData/Global/UserAccount/{Property}/{PropertyValue}]
 `GET` ITAS User Account profiles.
@@ -447,6 +465,9 @@ Global (system-wide) codes
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 
 # Group Master Reference Data
 Master Data access to various Data objects
@@ -480,6 +501,8 @@ Master Data access to various Data objects
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 ### Create Update Master Data [PUT]
@@ -520,7 +543,8 @@ Master Data access to various Data objects
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Nominal Reference Data
 Codes relating to Nominal Ledger and related endpoints.
@@ -563,6 +587,9 @@ Codes relating to Nominal Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Department [/ReferenceData/{TradingEntityId}/NominalLedger/Department/{DepartmentId}]
 `GET` Codes used to segregate business sectors within a trading company, and can be applied to contracts and accounting transactions.
 ### Read Department [GET]
@@ -593,6 +620,9 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Expense List [/ReferenceData/{TradingEntityId}/NominalLedger/Expense/{Property}/{PropertyValue}]
 `GET` Codes that are primarily used for accounting transaction analysis purposes.
@@ -630,6 +660,9 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## NominalAccount List [/ReferenceData/{TradingEntityId}/NominalLedger/NominalAccount/{Property}/{PropertyValue}]
 `GET` Nominal (General) Ledger Account profile.
@@ -671,6 +704,9 @@ Codes relating to Nominal Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## NominalAccount [/ReferenceData/{TradingEntityId}/NominalLedger/NominalAccount/{NominalAccountId}]
 `GET` Nominal (General) Ledger Account profile.
 
@@ -703,7 +739,10 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
-    
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ### Update NominalAccount [PUT]
 `PUT` Update Nominal (General) Ledger Acccount profile.
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -736,6 +775,9 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ### Delta Update NominalAccount [PATCH]
 `PATCH` Update Nominal (General) Ledger Account profile.
@@ -770,6 +812,9 @@ Codes relating to Nominal Ledger and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## NominalCategory List [/ReferenceData/{TradingEntityId}/NominalLedger/NominalCategory/{Property}/{PropertyValue}]
 `GET` User-defined categorisation codes that can be applied to departments and bank accounts.
 ### List NominalCategories [GET]
@@ -803,6 +848,9 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Vat Rate List [/ReferenceData/{TradingEntityId}/NominalLedger/VATRate/{Property}/{PropertyValue}]
 `GET` Codes and rates applied as part of any VAT/GST accounting practise.
@@ -839,6 +887,9 @@ Codes relating to Nominal Ledger and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 # Group Physicals Reference Data
@@ -891,6 +942,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Contract Term List [/ReferenceData/{TradingEntityId}/Physicals/ContractTerm/{Property}/{PropertyValue}]
 `GET` Contract Terms (aka Incoterms) usually setup to represent pre-defined, internationally recognised, commercial terms of contract.
 ### List ContractTerms [GET]
@@ -928,6 +982,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## PackingType List [/ReferenceData/{TradingEntityId}/Physicals/PackingType/{Property}/{PropertyValue}]
 `GET` Codes used to describe the units of packing applied in physical contracts.
 ### List PackingTypes [GET]
@@ -962,6 +1019,9 @@ Codes relating to Physicals Trading and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## PaymentTerm List [/ReferenceData/{TradingEntityId}/Physicals/PaymentTerm/{Property}/{PropertyValue}]
 
@@ -1002,6 +1062,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Port List [/ReferenceData/{TradingEntityId}/Physicals/Port/{Property}/{PropertyValue}]
 `GET` Codes used to identify physical port locations.
 ### List Ports [GET]
@@ -1038,6 +1101,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Sample List [/ReferenceData/{TradingEntityId}/Physicals/Sample/{Property}/{PropertyValue}]
 `GET` Codes used to identify specific product qualities.
 ### List Samples [GET]
@@ -1072,6 +1138,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## ShippingStatus List [/ReferenceData/{TradingEntityId}/Physicals/ShippingStatus/{Property}/{PropertyValue}]
 `GET` Codes used to classify the status in terms of movement, useful for reporting purposes.
 ### List ShippingStatuses [GET]
@@ -1102,6 +1171,9 @@ Codes relating to Physicals Trading and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Terminal List [/ReferenceData/{TradingEntityId}/Physicals/Terminal/{Property}/{PropertyValue}]
 `GET` Codes used to identify specific terminal location, useful for reporting purposes.
@@ -1136,6 +1208,9 @@ Codes relating to Physicals Trading and related endpoints.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Vessel List [/ReferenceData/{TradingEntityId}/Physicals/Vessel/{Property}/{PropertyValue}]
 `GET` List of Vessel names that can be applied as part of any physical logistics strategy
 ### List Vessels [GET]
@@ -1169,6 +1244,9 @@ Codes relating to Physicals Trading and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Weight List [/ReferenceData/{TradingEntityId}/Physicals/Weight/{Property}/{PropertyValue}]
 `GET` Codes used to describe the units of measurement applied in physical contracts.
@@ -1207,6 +1285,9 @@ Codes relating to Physicals Trading and related endpoints.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 # Group WIP Reference Data
@@ -1259,6 +1340,9 @@ WIP Ledger related reference data.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 
 ## Charter [/ReferenceData/{TradingEntityId}/WIPLedger/Charter/{CharterId}]
 `GET` Charter profile – restricted by WIPAccountType of `C`.
@@ -1295,6 +1379,9 @@ WIP Ledger related reference data.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 ## StockUnit List [/ReferenceData/{TradingEntityId}/WipLedger/StockUnit/{Property}/{PropertyValue}]
@@ -1341,6 +1428,8 @@ WIP Ledger related reference data.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## StockUnit [/ReferenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
 `GET` Stock Account profile - restricted by WIPAccountType of `S`.
@@ -1379,6 +1468,8 @@ WIP Ledger related reference data.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## WIP Account List [/ReferenceData/{TradingEntityId}/WipLedger/WIPAccount/{Property}/{PropertyValue}]
 `GET` List of charter profiles.
@@ -1423,7 +1514,8 @@ WIP Ledger related reference data.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## WIP Account [/ReferenceData/{TradingEntityId}/WipLedger/WipAccount/{WipAccountId}]
 `GET` Charter profile
@@ -1460,6 +1552,8 @@ WIP Ledger related reference data.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Accounting-Transactions
 Data Objects and endpoints providing access to accounting transactions generated through ITAS processes.
@@ -1523,6 +1617,8 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 ## UnPosted Transaction [/Accounting/{TradingEntityId}/Transaction/UnPostedTransaction/{DocumentReference}]
@@ -1578,6 +1674,9 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Transaction Bank Accounts [/Accounting/{TradingEntityId}/Transaction/BankAccounts/{DocumentReference}]
 `GET` Bank account details for transactions representing invoices
 ### Read Transaction Bank Accounts [GET]
@@ -1612,6 +1711,8 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Transaction Header List [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{Property}/{PropertyValue}]
 `GET` Document summary information including properties specific to integration requirements.
@@ -1689,6 +1790,9 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ### Delta Update Transaction Header [PATCH]
 `PATCH` Document summary information including properties specific to integration requirements.
 
@@ -1721,6 +1825,8 @@ Data Objects and endpoints providing access to accounting transactions generated
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Contract-F&O
 Data Objects and endpoints providing access to and creation of Futures and Options Trades.
@@ -1776,6 +1882,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## F&O Trade List [/Contract/{TradingEntityId}/FuturesAndOptions/Trade/{Property}/{PropertyValue}]
 `GET` List of Futures and Options Trades
@@ -1825,6 +1933,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 ## F&O Trade [/Contract/{TradingEntityId}/FuturesAndOptions/Trade/{UniqueId}]
@@ -1910,7 +2020,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Contract-Physical
 
@@ -1970,6 +2081,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 `GET` Principle Physical Contract (agreement) details
@@ -2017,6 +2130,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Physical Trade Commissions List [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{Property}/{PropertyValue}]
 `GET` List of Broker commissions held against Physical Contracts.
@@ -2053,6 +2168,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Physical Trade Commission [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{ContractId}]
 `GET` Broker commissions held against Physical Contracts.
@@ -2084,6 +2201,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
 `GET` List of Logistics information for Physical Contracts.
@@ -2121,6 +2240,9 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Finance-Cash
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
@@ -2170,6 +2292,9 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
 `POST` Allows generic cash payments to be created between multiple accounts  
 ### Create PayableManual [POST]
@@ -2200,6 +2325,9 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
 `POST` Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
@@ -2235,6 +2363,9 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
 `POST` Allows generic cash receipts to be created between multiple accounts  
@@ -2267,6 +2398,8 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
 `POST` Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
@@ -2302,6 +2435,8 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Inventory-Physicals-Order Scheduling
 Production Order scheduling services.
@@ -2337,6 +2472,9 @@ Production Order scheduling services.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## DeliveryOutOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/DeliveryOutOrder/{ReleaseId}]
 `GET` Orders (CallOffs) specifically representing outgoing goods.
 ### Read DeliveryOutOrder [GET]
@@ -2363,6 +2501,9 @@ Production Order scheduling services.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## ExpedCallOff List [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/ExpedCallOff/{Property}/{PropertyValue}]
 `GET` Orders (CallOffs) generated through EXPED
@@ -2426,6 +2567,9 @@ Production Order scheduling services.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 
 ## ExpedCallOff [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/ExpedCallOff/{ReleaseId}]
 `GET` Orders (CallOffs) generated through EXPED
@@ -2484,6 +2628,8 @@ Production Order scheduling services.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## StockToStockOrder [/Inventory/{TradingEntityId}/Physicals/OrderScheduling/StockToStockOrder/{ReleaseId}]
 `GET` Orders specifically representing movements of goods between Stock Units (aka Manufacturing Orders).
@@ -2521,6 +2667,8 @@ Production Order scheduling services.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 
 # Group Inventory-Physicals-Stock Management
@@ -2561,6 +2709,8 @@ Management activities of Stock Units (where represented by WIP Accounts).
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## StockBatch [/Inventory/{TradingEntityId}/Physicals/StockManagement/StockBatch/{StockBatchId}]
 `GET` Batch record information by Stock Unit.
@@ -2592,6 +2742,8 @@ Management activities of Stock Units (where represented by WIP Accounts).
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Inventory-Physicals-Stock Processing
 Production Order processing services.
@@ -2638,6 +2790,9 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## StockLoading [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockLoading/{ReleaseId}]
 `GET` Information specific to the source of the goods generated during any movement (Delivery Out or Stock to Stock).
 ### Read StockLoading [GET]
@@ -2666,6 +2821,9 @@ None.
     
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ### Create StockLoading [PUT]
 `PUT` Remove current suggestions for Tanks and Create Stock Loadings
@@ -2707,6 +2865,8 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ## StockMovement [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockMovement/{ReleaseId}]
 `GET` Information relating to the processing of the Order. 
@@ -2755,6 +2915,9 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 ### Update StockMovement [PUT]
 `PUT` Information relating to the processing of the Order.
@@ -2807,6 +2970,8 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
 
 # Group Data Object Definitions
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
