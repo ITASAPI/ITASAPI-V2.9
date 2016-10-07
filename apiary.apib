@@ -1848,10 +1848,10 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
 |OptionSeries|Option Series|`number`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
-|Lots|Lots|`number`|||Required. Greater than `0`|
+|Lots|Lots|`decimal`|||Required. Greater than `0`|
 |PhysRef|Physical Reference|`string`|11|||
 |BrokerCode|Broker Account|`string`|10||Required|
-|Price|Price|`number`|||Required|
+|Price|Price|`decimal`|||Required|
 |FloorBrokerCode|Floor Broker Account Code|`string`|10|||
 |TraderCode|Trader Code|`string`|3||Required|
 |Memo|Memorandum|`string`|120|||
@@ -1955,10 +1955,10 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
 |OptionSeries|Option Series|`number`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
-|Lots|Lots|`number`|||Greater than `0`|
+|Lots|Lots|`decimal`|||Greater than `0`|
 |PhysRef|Physical Reference|`string`|11|||
 |Broker|Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
-|Price|Price|`number`||||
+|Price|Price|`decimal`||||
 |FloorBroker|Floor Broker Account delivered as an <b><a href="/#reference/data-object-definitions/accountheader">AccountHeader</a></b> object|`object`||||
 |Trader|see <b><a href="/#reference/global-reference-data/useraccount-list">UserAccount List</a></b> endpoint|`object`||||
 |Memo|Memorandum|`string`|120|||
