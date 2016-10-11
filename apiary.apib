@@ -1840,8 +1840,8 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |SerialNo|Serial Number|`number`||||
 |TradeDate|Trade Date|`datetime`|||Required|
 |AccountCode|Account Code|`string`|10||Required|
-|Code|Trade Code|`string`|3||Required|
-|DepartmentCode|Department Code|`string`|4||Required|
+|Code|Trade Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
 |InstrumentCode|Instrument Code|`string`|8||Required|
 |PromptMonth|Prompt Month|`datetime`|||Required|
 |Instruction|Instruction|`boolean`|5|||
@@ -1850,7 +1850,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
 |Lots|Lots|`decimal`|||Required. Greater than `0`|
 |PhysRef|Physical Reference|`string`|11|||
-|BrokerCode|Broker Account|`string`|10||Required|
+|BrokerCode|Broker Account|`string`|10|||
 |Price|Price|`decimal`|||Required|
 |FloorBrokerCode|Floor Broker Account Code|`string`|10|||
 |TraderCode|Trader Code|`string`|3|||
