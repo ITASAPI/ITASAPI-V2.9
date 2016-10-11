@@ -403,7 +403,7 @@ Global (system-wide) codes
 |--------|-----------|----|----------|-----|----------|
 |InstrumentId|Instrument ID|`string`|8|||
 |InstrumentDescription|Instrument ID Description|`string`|60|||
-|Status|Status|`boolean`|5|||
+|Status|Status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1844,7 +1844,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |DepartmentCode|Department Code|`string`|4||Required|
 |InstrumentCode|Instrument Code|`string`|8||Required|
 |PromptMonth|Prompt Month|`datetime`|||Required|
-|Instruction|Instruction|`string`|1|||
+|Instruction|Instruction|`boolean`|5|||
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
@@ -1951,7 +1951,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 |Department|see <b><a href="/#reference/nominal-reference-data/department/read-department">Department</a></b> endpoint|`object`||||
 |Instrument|see <b><a href="/#reference/global-reference-data/instrument-list">Instrument List</a></b> endpoint|`object`||||
 |PromptMonth|Prompt Month|`datetime`||||
-|Instruction|Instruction|`string`|1|||
+|Instruction|Instruction|`boolean`|5|||
 |OptionType|Option Type|`string`|1||`C`, `P` or `blank`|
 |OptionSeries|Option Series|`decimal`||||
 |BuySell|Buy or Sell|`string`|1||`B` or `S`|
@@ -3589,7 +3589,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Department (Department)
 + Instrument (Instrument)
 + PromptMonth: `2015-07-01T00:00:00Z` (string)
-+ Instruction: Y (string)
++ Instruction: true (boolean)
 + OptionType: C (string)
 + OptionSeries: 123 (number)
 + BuySell: B (string)
@@ -3613,7 +3613,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DepartmentCode: 5100 (string)
 + InstrumentCode: NY11 (string)
 + PromptMonth: `2015-07-01T00:00:00Z` (string)
-+ Instruction: Y (string)
++ Instruction: true (boolean)
 + OptionType: C (string)
 + OptionSeries: 123 (number)
 + BuySell: B (string)
@@ -3650,7 +3650,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## Instrument (object)
 + InstrumentId: NY11 (string)
 + InstrumentDescription: ICE US SUGAR (string)
-+ Status: true (boolean)
++ Status: O (string)
 
 ## MasterDataTradingEntityId (object)
 + TradingEntityId: JT (string)
