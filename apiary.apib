@@ -9,10 +9,10 @@ VERSION: 2.8
 <div>
 <ul>
 <li>Global Reference Data <strong>Instrument List</strong>: GET Instrument Codes<a href="/#reference/global-reference-data/instrument-list"> Link</a></li>
-<li>Contract-F&O <strong>F&O Trade Create</strong>: POST Allows Futures and Options Trade to be created<a href="/#reference/contract-f&o/fo-trade-create"> Link</a></li>
+<!--<li>Contract-F&O <strong>F&O Trade Create</strong>: POST Allows Futures and Options Trade to be created<a href="/#reference/contract-f&o/fo-trade-create"> Link</a></li>-->
 <li>Contract-F&O <strong>F&O Trade List</strong>: GET List of Futures and Options Trades<a href="/#reference/contract-f&o/fo-trade-list"> Link</a></li>
 <li>Contract-F&O <strong>F&O Trade</strong>: GET Futures and Options Trade<a href="/#reference/contract-f&o/fo-trade"> Link</a></li>
-<li>Contract-F&O <strong>F&O Trade</strong>: PATCH Allows sections of a Futures and Options Trade to be updated<a href="/#reference/contract-f&o/fo-trade/delta-update-f&o-trade"> Link</a></li>
+<!--<li>Contract-F&O <strong>F&O Trade</strong>: PATCH Allows sections of a Futures and Options Trade to be updated<a href="/#reference/contract-f&o/fo-trade/delta-update-f&o-trade"> Link</a></li>-->
 </ul>
 <br />
 </div>
@@ -1829,9 +1829,9 @@ Data Objects and endpoints providing access to accounting transactions generated
     + Attributes (405 MethodNotAllowedMessage)
 
 # Group Contract-F&O
-Data Objects and endpoints providing access to and creation of Futures and Options Trades.
+Data Objects and endpoints providing access to <!--and creation of-->Futures and Options Trades.
 
-## F&O Trade Create [/Contract/{TradingEntityId}/FuturesAndOptions/Trade]
+<!--## F&O Trade Create [/Contract/{TradingEntityId}/FuturesAndOptions/Trade]
 `POST` Allows Futures and Options Trade to be created
 ### Create F&O Trade [POST] 
 
@@ -1884,6 +1884,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
+-->
 
 ## F&O Trade List [/Contract/{TradingEntityId}/FuturesAndOptions/Trade/{Property}/{PropertyValue}]
 `GET` List of Futures and Options Trades
@@ -1988,7 +1989,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
 
-### Delta Update F&O Trade [PATCH] 
+<!--### Delta Update F&O Trade [PATCH] 
 `PATCH` Allows sections of a Futures and Options Trade to be updated
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2023,6 +2024,7 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
 
+-->
 # Group Contract-Physical
 
 ## Physical Trade List [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{Property}/{PropertyValue}]
