@@ -2937,6 +2937,42 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
 
+# Group Valuation-Physical
+Data endpoints for Contract Valuation
+
+## Physical Trade [/Valuation/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
+`GET` Valuation of a Single Contract
+### Read PhysicalTrade [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|ContractId|Contract ID|`string`|||Required|
+|PhysicalTradeValue|see <b><a href="/#reference/wip-reference-data/stockunit">PhysicalTradeValue</a></b> object|`object`|||Required|
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ContractId (required, string, `P00004.000`)
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (PhysicalTradeVal)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
+
 # Group Data Object Definitions
 List of re-usable Data Objects referenced as `object` types. Not that these endpoints are not accessable and only here for reference purposes.
 
@@ -3735,6 +3771,21 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + AgentAccountCode: AGFARM01.P (string)
 + AgentReference: abcdefg (string)
 
+## PhysicalTradeHeader (object)
++ TradingEntityId: JT (string)
++ ContractId: P00004.000 (string)
++ ContractType: P (string)
++ ContractStatus: O (string)
++ ContractApproved: true (boolean)
++ Counterparty (AccountHeaderC)
++ Commodity (Commodity)
++ Trader (UserAccount)
++ Department (Department)
++ PaymentTerm (PaymentTerm)
++ ContractTerm (ContractTerm)
++ ContractTermPort (Port List)
++ ShipmentStatus (ShippingStatus)
+
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
 + VesselReference: abc123 (string)
@@ -3743,6 +3794,12 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentsAcknowledged: true (boolean)
 + DocumentsAcknowledgedDate: `2015-06-01T00:00:00Z` (string)
 
+## PhysicalTradeVal (object)
++ ContractId: P00004.000 (string)
++ PhysicalTradeHeader (PhysicalTradeHeader)
++ ValuesInPnLCcy (ValuesInPnLCcy)
++ ValuesInContractCcy (ValuesInContractCcy)
++ ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
 
 ## Port (object)
 + PortId: AQABA (required, string)
@@ -3984,6 +4041,33 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + UserAccountId: JS (string)
 + UserAccountName: JSMITH (string)
 + UserAccountDescription: Joseph Smith (string)
+
+## ValuesInContractCcy (object)
++ ConValContract: 123 (number)
++ CostValContract: 123 (number)
++ ComsnValContract: 123 (number)
++ PolValContract: 123 (number)
++ FOContract: 123 (number)
++ FXContract: 123 (number)
++ MktValContract: 123 (number)
+
+## ValuesInFunctionalCcy (object)
++ ConValFunctional: 123 (number)
++ CostValFunctional: 123 (number)
++ ComsnValFunctional: 123 (number)
++ PolValFunctional: 123 (number)
++ FOFunctional: 123 (number)
++ FXFunctional: 123 (number)
++ MktValFunctional: 123 (number)
+
+## ValuesInPnLCcy (object)
++ ConValPnL: 123 (number)
++ CostValPnL: 123 (number)
++ ComsnValPnL: 123 (number)
++ PolValPnL: 123 (number)
++ FOPnL: 123 (number)
++ FXPnL: 123 (number)
++ MktValPnL: 123 (number)
 
 ## Vessel List (object)
 + VesselId: MV MERSEY FISHER (string)
