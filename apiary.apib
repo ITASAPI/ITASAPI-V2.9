@@ -2940,14 +2940,50 @@ None.
 # Group Valuation-Physical
 Data endpoints for Contract Valuation
 
-## Physical Trade [/Valuation/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
+## Physical Trade Valuation [/Valuation/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 `GET` Valuation of a Single Contract
-### Read PhysicalTrade [GET]
+### Read PhysicalTradeValuation [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract ID|`string`|||Required|
-|PhysicalTradeValue|see <b><a href="/#reference/wip-reference-data/stockunit">PhysicalTradeValue</a></b> object|`object`|||Required|
+|<b>Physical Trade Header</b>|
+|ContractType|Contract Type|`string`||||
+|ContractStatus|Contract Status|`string`||||
+|ContractApproved|Contract Approved|`string`||||
+|CounterpartyCode|Counterparty Code|`string`||||
+|CommodityFullCode|               |`string`||||
+|TraderCode|Trader Code|`string`||||
+|DepartmentCode|Department Code|`string`||||
+|PaymentTermCode|Payment Term Code|`string`||||
+|ContractTermCode|Contract Term Code|`string`||||
+|ContractTermPortCode|Contract Term Port Code|`string`||||
+|ShipmentStatusCode|Shipment Status Code|`string`||||
+|<b>Values In PnL Currency</b>|
+|ConValPnL|Contract Value PnL|`number`||||
+|CostValPnL|Cost Value PnL|`number`||||
+|ComsnValPnL|Commission Value PnL|`number`||||
+|PolValPnL|Pol Value PnL|`number`||||
+|FOPnL|Futures and Options PnL|`number`||||
+|FXPnL|Foreign Exchange PnL|`number`||||
+|MktValPnL|Market Value PnL|`number`||||
+|<b>Values In Contract Currency|
+|ConValContract|Contract Value Contract|`number`||||
+|CostValContract|Cost Value Contract|`number`||||
+|ComsnValContract|Commission Value Contract|`number`||||
+|PolValContract|Pol Value Contract|`number`||||
+|FOContract|Futures and Options Contract|`number`||||
+|FXContract|Foreign Exchange Contract|`number`||||
+|MktValContract|Market Value Contract|`number`||||
+|<b>Values In Functional Currency|
+|ConValFunctional|Contract Value Functional|`number`||||
+|CostValPnL|Cost Value Functional|`number`||||
+|ComsnValPnL|Commission Value Functional|`number`||||
+|PolValPnL|Pol Value Functional|`number`||||
+|FOPnL|Futures and Options Functional|`number`||||
+|FXPnL|Foreign Exchange Functional|`number`||||
+|MktValPnL|Market Value Functional|`number`||||
+
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
@@ -3098,6 +3134,31 @@ A multipurpose object used by several endpoints
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
+
+<!--## PhysicalTradeHeader [/PhysicalTradeHeader]
+A multipurpose object used by several endpoints
+### PhysicalTradeHeader[GET]
+
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TradingEntityId|Trading Entity ID|`string`|2|||
+|ContractId|Contract ID|`string`|20|||
+|ContractType|Contract Type|`string`|1||`P` or `S`|
+|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
+|ContractApproved|Is Contract Approved|`boolean`|5|||
+|Counterparty|see<b><a href="/#reference/data-object-definitions/accountheader/accountheader"> Account Header</a></b> object|`object`|`object`||||
+|Commodity|see<b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities"> Commodity List</a></b> endpoint|`object`||||
+|Trader|see<b><a href="/#reference/global-reference-data/useraccount-list"> User Account List</a></b> endpoint|`object`||||
+|Department|see<b><a href="/#reference/nominal-reference-data/department"> Department</a></b> endpoint|`object`||||
+|PaymentTerm|see<b><a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms"> PaymentTerm List</a></b> endpoint|`object`||||
+|ContractTerm|see<b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms"> ContractTerm List</a></b> endpoint|`object`||||
+|ContractTermPort|see<b><a href="/#reference/physicals-reference-data/port-list/list-ports"> Port List</a></b> endpoint|`object`||||
+|ShipmentStatus|see<b><a href="/#reference/physicals-reference-data/shippingstatus-list"> ShippingStatus List</a></b> endpoint|`object`||||
+
++ Response 200 (application/json; charset=utf-8)
++ Attributes (DocumentDetails)
+-->
 
 ## TradeCode [/TradeCode]
 A multipurpose object used by several endpoints
