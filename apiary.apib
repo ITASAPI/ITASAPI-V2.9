@@ -3135,30 +3135,6 @@ A multipurpose object used by several endpoints
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
 
-<!--## PhysicalTradeHeader [/PhysicalTradeHeader]
-A multipurpose object used by several endpoints
-### PhysicalTradeHeader[GET]
-
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|TradingEntityId|Trading Entity ID|`string`|2|||
-|ContractId|Contract ID|`string`|20|||
-|ContractType|Contract Type|`string`|1||`P` or `S`|
-|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Is Contract Approved|`boolean`|5|||
-|Counterparty|see<b><a href="/#reference/data-object-definitions/accountheader/accountheader"> Account Header</a></b> object|`object`|`object`||||
-|Commodity|see<b><a href="/#reference/physicals-reference-data/commodity-list/list-commodities"> Commodity List</a></b> endpoint|`object`||||
-|Trader|see<b><a href="/#reference/global-reference-data/useraccount-list"> User Account List</a></b> endpoint|`object`||||
-|Department|see<b><a href="/#reference/nominal-reference-data/department"> Department</a></b> endpoint|`object`||||
-|PaymentTerm|see<b><a href="/#reference/physicals-reference-data/paymentterm-list/list-paymentterms"> PaymentTerm List</a></b> endpoint|`object`||||
-|ContractTerm|see<b><a href="/#reference/physicals-reference-data/contract-term-list/list-contractterms"> ContractTerm List</a></b> endpoint|`object`||||
-|ContractTermPort|see<b><a href="/#reference/physicals-reference-data/port-list/list-ports"> Port List</a></b> endpoint|`object`||||
-|ShipmentStatus|see<b><a href="/#reference/physicals-reference-data/shippingstatus-list"> ShippingStatus List</a></b> endpoint|`object`||||
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (DocumentDetails)
--->
 
 ## TradeCode [/TradeCode]
 A multipurpose object used by several endpoints
