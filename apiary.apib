@@ -392,6 +392,40 @@ Global (system-wide) codes
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
 
+## Document Status List [/ReferenceData/Global/DocumentStatus/{Property}/{PropertyValue}]
+`GET` Currency codes.
+### List Document Statuses [GET]
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentStatusId|Document Status ID|`string`|1|||
+|DocumentStatusDescription|Document Status ID Description|`string`|?|||
+|DocumentLocked|Is Document Locked|`boolean`|5|||
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + Property (optional, enum[string]) 
+       + Members
+            + DocumentStatusId
+            + DocumentLocked
+    + PropertyValue (optional, string, `P`)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (array [DocumentStatus])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadPropertyResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 ## Instrument List [/ReferenceData/Global/Instrument/{Property}/{PropertyValue}]
 `GET` Instrument codes.
 ### List Instruments [GET]
@@ -1724,6 +1758,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
 |DocumentReversed|Document Reversed Reference|`string`|9|||
 |AssociateDocument|Associate Document Reference|`string`|9|||
+|DocumentStatusCode|Document Status Code|`string`|1|||
 
 + Request
     [AccessToken][]
@@ -1762,6 +1797,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
+|DocumentStatusCode|Document Status Code|`string`|1|||
 
 + Request (application/json)
     + Header
@@ -1797,6 +1833,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 |DocumentReference|Transaction Document Reference|`string`|9||Required|
 |EDICode|Transaction EDI Code|`string`|25|||
 |InterfaceStatus|Transaction Interface Status|`string`|1|||
+|DocumentStatusCode|Document Status Code|`string`|1|||
 
 + Request (application/json)
     + Header
@@ -3651,6 +3688,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Narrative: Bacs 28/07/15 (string)
 + EDICode: abc123 (string)
 
+## DocumentStatus (object)
++ DocumentStatusId: P (string)
++ DocumentStatusDescription: Processed (string)
++ DocumentLocked: true (boolean)
 
 ## Expense List (object)
 + ExpenseId: 1COES (string)
