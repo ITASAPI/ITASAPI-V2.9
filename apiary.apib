@@ -2948,17 +2948,17 @@ Data endpoints for Contract Valuation
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract ID|`string`|||Required|
 |<b>Physical Trade Header</b>|
-|ContractType|Contract Type|`string`||||
-|ContractStatus|Contract Status|`string`||||
-|ContractApproved|Contract Approved|`string`||||
-|CounterpartyCode|Counterparty Code|`string`||||
+|ContractType|Contract Type|`string`|1||`P` or `S`|
+|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
+|ContractApproved|Contract Approved|`boolean`|5|||
+|CounterpartyCode|Counterparty Code|`string`|10|||
 |CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
-|TraderCode|Trader Code|`string`||||
-|DepartmentCode|Department Code|`string`||||
-|PaymentTermCode|Payment Term Code|`string`||||
-|ContractTermCode|Contract Term Code|`string`||||
-|ContractTermPortCode|Contract Term Port Code|`string`||||
-|ShipmentStatusCode|Shipment Status Code|`string`||||
+|TraderCode|Trader Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
+|PaymentTermCode|Payment Term Code|`string`|8|||
+|ContractTermCode|Contract Term Code|`string`|8|||
+|ContractTermPortCode|Contract Term Port Code|`string`|8|||
+|ShipmentStatusCode|Shipment Status Code|`string`|2|||
 |<b>Values In PnL Currency</b>|
 |ConValPnL|Contract Value PnL|`number`||||
 |CostValPnL|Cost Value PnL|`number`||||
@@ -3809,19 +3809,18 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + AgentReference: abcdefg (string)
 
 ## PhysicalTradeHeader (object)
-+ TradingEntityId: JT (string)
 + ContractId: P00004.000 (string)
 + ContractType: P (string)
 + ContractStatus: O (string)
 + ContractApproved: true (boolean)
-+ Counterparty (AccountHeaderC)
-+ Commodity (Commodity)
-+ Trader (UserAccount)
-+ Department (Department)
-+ PaymentTerm (PaymentTerm)
-+ ContractTerm (ContractTerm)
-+ ContractTermPort (Port List)
-+ ShipmentStatus (ShippingStatus)
++ CounterpartyCode: FOODSWAT.S (string)
++ CommodityFullCode: `CHE||PASO||55||QWE||RTY` (string)
++ TraderCode: JS (string)
++ DepartmentCode: NAD (string)
++ PaymentTermCode: INV30 (string)
++ ContractTermCode: DEL (string)
++ ContractTermPortCode: LIV (string)
++ ShipmentStatusCode: D (string)
 
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
@@ -3832,7 +3831,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentsAcknowledgedDate: `2015-06-01T00:00:00Z` (string)
 
 ## PhysicalTradeVal (object)
-+ ContractId: P00004.000 (string)
 + PhysicalTradeHeader (PhysicalTradeHeader)
 + ValuesInPnLCcy (ValuesInPnLCcy)
 + ValuesInContractCcy (ValuesInContractCcy)
