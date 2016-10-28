@@ -3021,9 +3021,7 @@ Data endpoints for Contract Valuation
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract ID|`string`|10||Required|
-|ContractType|Contract Type|`string`|1||`P` or `S`|
-|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Contract Approved|`boolean`|5|||
+|TradingEntityId|Trading Entity ID|`string`|2|||
 |<b>Values In PnL Currency</b>|
 |ConValPnL|Contract Value PnL|`number`||||
 |CostValPnL|Cost Value PnL|`number`||||
@@ -4021,9 +4019,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 
 ## PhysicalTradeVal (object)
 + ContractId: P00004.000 (string)
-+ ContractType: P (string)
-+ ContractStatus: O (string)
-+ ContractApproved: true (string)
++ TradingEntityId: JT (string)
 + ValuesInPnLCcy (ValuesInPnLCcy)
 + ValuesInContractCcy (ValuesInContractCcy)
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
