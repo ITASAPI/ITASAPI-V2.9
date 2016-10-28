@@ -3020,7 +3020,7 @@ Data endpoints for Contract Valuation
  
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|PhysicalTradeValue|see <b><a href="/#reference/wip-reference-data/stockunit">PhysicalTradeValue</a></b> object|`object`||||
+|PhysicalTradeValue|see <b><a href="/#reference/data-object-definitions/physicaltradevalue">PhysicalTradeValue</a></b> object|`object`||||
 
 
 
@@ -3106,7 +3106,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |<b>Physical Trade Values</b>|[array] of `Property`|
 |ContractId|Contract ID|`string`|10|||
 |TradingEntityId|Trading Entity ID|`string`|2|||
-|<b>Values In PnL Currency</b>|
+|<b>ValuesInPnLCurrency</b>|
 |ConValPnL|Contract Value PnL|`number`||||
 |CostValPnL|Cost Value PnL|`number`||||
 |ComsnValPnL|Commission Value PnL|`number`||||
@@ -3114,7 +3114,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |FOPnL|Futures and Options PnL|`number`||||
 |FXPnL|Foreign Exchange PnL|`number`||||
 |MktValPnL|Market Value PnL|`number`||||
-|<b>Values In Contract Currency|
+|<b>ValuesInContractCurrency|
 |ConValContract|Contract Value Contract|`number`||||
 |CostValContract|Cost Value Contract|`number`||||
 |ComsnValContract|Commission Value Contract|`number`||||
@@ -3122,7 +3122,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |FOContract|Futures and Options Contract|`number`||||
 |FXContract|Foreign Exchange Contract|`number`||||
 |MktValContract|Market Value Contract|`number`||||
-|<b>Values In Functional Currency|
+|<b>ValuesInFunctionalCurrency|
 |ConValFunctional|Contract Value Functional|`number`||||
 |CostValFunctional|Cost Value Functional|`number`||||
 |ComsnValFunctional|Commission Value Functional|`number`||||
@@ -4030,6 +4030,9 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentsAcknowledgedDate: `2015-06-01T00:00:00Z` (string)
 
 ## PhysicalTradeVal (object)
++ PhysicalTradeValue (PhysicalTradeValue)
+
+## PhysicalTradeValue (object)
 + ContractId: P00004.000 (string)
 + TradingEntityId: JT (string)
 + ValuesInPnLCcy (ValuesInPnLCcy)
