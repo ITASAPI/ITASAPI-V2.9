@@ -3056,14 +3056,17 @@ The body of the request can contain multiple values delimited by double pipe "&#
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|<b>Physical Trade Header</b>|
 |TradingEntityId|Trading Entity ID|`string`|2|||
 |ContractId|Contract ID|`string`|10|||
 |ContractType|Contract Type|`string`|1||`P` or `S`|
 |ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
 |ContractApproved|Contract Approved|`boolean`|5|||
 |CounterpartyCode|Counterparty Code|`string`|10|||
-|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
+|CommodityCodePart1|Commodity Code|`string`|3|||
+|CommodityCodePart2|Commodity Origin|`string`|6|||
+|CommodityCodePart3|Commodity Grade|`string`|6|||
+|CommodityCodePart4|Commodity Code Section 4|`string`|6|||
+|CommodityCodePart5|Commodity Code Section 5|`string`|6|||
 |TraderCode|Trader Code|`string`|3|||
 |DepartmentCode|Department Code|`string`|4|||
 |PaymentTermCode|Payment Term Code|`string`|8|||
@@ -3072,7 +3075,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |ShipmentStatusCode|Shipment Status Code|`string`|2|||
 |SingleCcyConVal|Single Currency Contract Value|`boolean`|5|||
 |SingleCcyCosts|Single Currency Costs|`boolean`|5|||
-|RateOfExchangeData|Rate of Exchange Data|`number`||||
+|RateOfExchangeDate|Rate of Exchange Date|`number`||||
 |ValuationPeriod|Valuation Period|`string`|-|||
 
 
@@ -4007,21 +4010,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ContractTermPortCode: LIV (string)
 + ShipmentStatusCode: D (string)
 
-## PhysicalTradeHeaderRequest (object)
-+ TradingEntityId: JT (string)
-+ ContractId: P00004.000 (string)
-+ ContractType: P (string)
-+ ContractStatus: O (string)
-+ ContractApproved: true (boolean)
-+ CounterpartyCode: FOODSWAT.S (string)
-+ CommodityFullCode: `CHE||PASO||55||QWE||RTY` (string)
-+ TraderCode: JS (string)
-+ DepartmentCode: NAD (string)
-+ PaymentTermCode: INV30 (string)
-+ ContractTermCode: DEL (string)
-+ ContractTermPortCode: LIV (string)
-+ ShipmentStatusCode: D (string)
-
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
 + VesselReference: abc123 (string)
@@ -4052,10 +4040,26 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
 
 ## PhysicalTradeValRequest (object)
-+ PhysicalTradeHeader (PhysicalTradeHeaderRequest)
++ TradingEntityId: JT (string)
++ ContractId: P00004.000 (string)
++ ContractType: P (string)
++ ContractStatus: O (string)
++ ContractApproved: true (boolean)
++ CounterpartyCode: FOODSWAT.S (string)
++ CommodityCodePart1: CHE (string)
++ CommodityCodePart2: PASO (string)
++ CommodityCodePart3: 55 (string)
++ CommodityCodePart4: QWE (string)
++ CommodityCodePart5: RTY (string)
++ TraderCode: JS (string)
++ DepartmentCode: NAD (string)
++ PaymentTermCode: INV30 (string)
++ ContractTermCode: DEL (string)
++ ContractTermPortCode: LIV (string)
++ ShipmentStatusCode: D (string)
 + SingleCcyConVal: true (boolean)
 + SingleCcyCosts: false (boolean)
-+ RateOfExchangeDate: 20161027 (number)
++ RateOfExchangeDate: 20162810 (number)
 + ValuationPeriod: AUG16 (string)
 
 ## PhysicalTradeValResponse (object)
