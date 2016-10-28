@@ -3135,6 +3135,39 @@ The body of the request can contain multiple values delimited by double pipe "&#
     + Attributes (405 MethodNotAllowedMessage)
 
 
+## Physical Trade Valuation Re-Request [/Valuation/Physical/PhysicalTradeValReRequest/{RequestId}]
+`PUT` Re-Submit Request for Valuation of Contracts.
+### Create Physical Trade Valuation Request [PUT]
+ 
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|RequestId|Request ID|`number`|||Required|
+
++ Parameters
+    + RequestId (required, string, `JT`) ... Identify specific request ID.
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+   + Attributes (PhysicalTradeValResponse)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes  
+        + Data 
+            + RequestId: 10001 (number)
+        + Response (200 UpdateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
 
 ## Physical Trade Valuation Response [/Valuation/Physical/PhysicalTradeValResponse/{RequestId}]
 `GET` Contract Valuations from Request Query
