@@ -20,6 +20,7 @@ VERSION: 2.9
 </div>
 <div>~ Updated endpoints :</div>
 <ul>
+<li>Accounting-Transactions<strong> List Transaction Headers</strong>: Additional property DocumentStatusCode now included in the list<a href="/#reference/accounting-transactions/transaction-header-list"> Link</a></li>
 <li>Accounting-Transactions<strong> Update Transaction Header</strong>: Additional property DocumentStatusCode now included for update<a href="/#reference/accounting-transactions/transaction-header/update-transaction-header"> Link</a></li>
 <li>Accounting-Transactions<strong> Delta Update Transaction Header</strong>: Additional property DocumentStatusCode now included for update<a href="/#reference/accounting-transactions/transaction-header/delta-update-transaction-header"> Link</a></li>
 </ul>
@@ -405,7 +406,7 @@ Global (system-wide) codes
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentStatusId|Document Status ID|`string`|1|||
-|DocumentStatusDescription|Document Status ID Description|`string`|-|||
+|DocumentStatusDescription|Document Status ID Description|`string`|100|||
 |DocumentLocked|Is Document Locked|`boolean`|5|||
 
 + Request
