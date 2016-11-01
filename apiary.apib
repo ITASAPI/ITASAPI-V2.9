@@ -8,13 +8,20 @@ VERSION: 2.9
 <div>~ New endpoints added in this release :</div>
 <div>
 <ul>
-<li>none<strong>None</strong>: None<a href="/#reference/contract-f&o/fo-trade-create"> Link</a></li>
+<li>Valuation-Physical<strong>Read Physical Trade Valuation</strong>: GET Valuation of a Single Trade<a href="/#reference/valuation-physical/physical-trade-valuation/read-physical-trade-valuation"> Link</a></li>
+<li>Valuation-Physical<strong>Create Physical Trade Valuation Request</strong>: POST Request for Valuation of Trades<a href="/#reference/valuation-physical/physical-trade-valuation-request/create-physical-trade-valuation-request"> Link</a></li>
+<li>Valuation-Physical<strong>Read Physical Trade Valuation Request Information</strong>: GET Information relating to the Request of Physical Trade Valuation<a href="/#reference/valuation-physical/physical-trade-valuation-request-information/read-physical-trade-valuation-request-information"> Link</a></li>
+<li>Valuation-Physical<strong>Create Physical Trade Valuation Request</strong>: PUT Re-Submit Request for Valuation of Trades<a href="/#reference/valuation-physical/physical-trade-valuation-re-request/create-physical-trade-valuation-request"> Link</a></li>
+<li>Valuation-Physical<strong>Read Physical Trades Valuation Response</strong>: GET Contract Valuations from Request Query<a href="/#reference/valuation-physical/physical-trade-valuation-response/physical-trades-valuation-response"> Link</a></li>
+<li>Global Reference Data<strong>List Document Statuses</strong>: GET Document Statuses<a href="/#reference/global-reference-data/document-status-list/list-document-statuses"> Link</a></li>
+<li>Accounting-Transactions<strong>Read Transaction Header</strong>: GET Document information including properties specific to integration requirements<a href="/#reference/accounting-transactions/transaction-header/read-transaction-header"> Link</a></li>
 </ul>
 <p>  </p>
 </div>
 <div>~ Updated endpoints :</div>
 <ul>
-<li>None</li>
+<li>Accounting-Transactions<strong>Update Transaction Header</strong>: Additional property DocumentStatusCode now included for update<a href="/#reference/accounting-transactions/transaction-header/update-transaction-header"> Link</a></li>
+<li>Accounting-Transactions<strong>Delta Update Transaction Header</strong>: Additional property DocumentStatusCode now included for update<a href="/#reference/accounting-transactions/transaction-header/delta-update-transaction-header"> Link</a></li>
 </ul>
 <p>  </p>
 <div>** ends ** </div>
@@ -3016,7 +3023,7 @@ None.
 Data endpoints for Contract Valuation
 
 ## Physical Trade Valuation [/Valuation/{TradingEntityId}/Physical/PhysicalTradeVal/{ContractId}]
-`GET` Valuation of a Single Contract
+`GET` Valuation of a Single Trade
 ### Read Physical Trade Valuation [GET]
  
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -3049,7 +3056,7 @@ Data endpoints for Contract Valuation
     + Attributes (405 MethodNotAllowedMessage)
 
 ## Physical Trade Valuation Request [/Valuation/Physical/PhysicalTradeValRequest]
-`POST` Request for Valuation of Contracts.
+`POST` Request for Valuation of Trades.
 The body of the request can contain multiple values delimited by double pipe "&#124;&#124;" e.g. "TradingEntityId": "JT&#124;&#124;DT"
 
 ### Create Physical Trade Valuation Request [POST]
@@ -3136,7 +3143,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 
 
 ## Physical Trade Valuation Re-Request [/Valuation/Physical/PhysicalTradeValReRequest/{RequestId}]
-`PUT` Re-Submit Request for Valuation of Contracts.
+`PUT` Re-Submit Request for Valuation of Trades.
 ### Create Physical Trade Valuation Request [PUT]
  
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -3170,8 +3177,8 @@ The body of the request can contain multiple values delimited by double pipe "&#
 
 
 ## Physical Trade Valuation Response [/Valuation/Physical/PhysicalTradeValResponse/{RequestId}]
-`GET` Contract Valuations from Request Query
-### Physical Trades Valuation Response  [GET]
+`GET` Trade Valuations from Request Query
+### Read Physical Trades Valuation Response  [GET]
  
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
