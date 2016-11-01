@@ -3064,27 +3064,27 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |<b>Query</b>|
-|TradingEntityId|Trading Entity ID|`string`|2|||
-|ContractId|Contract ID|`string`|10|||
-|ContractType|Contract Type|`string`|1||`P` or `S`|
-|ContractStatus|Contract Status|`string`|1||`O`, `C` or `Q`|
-|ContractApproved|Contract Approved|`boolean`|5|||
-|CounterpartyCode|Counterparty Code|`string`|10|||
-|CommodityCodePart1|Commodity Code|`string`|3|||
-|CommodityCodePart2|Commodity Origin|`string`|6|||
-|CommodityCodePart3|Commodity Grade|`string`|6|||
-|CommodityCodePart4|Commodity Code Section 4|`string`|6|||
-|CommodityCodePart5|Commodity Code Section 5|`string`|6|||
-|TraderCode|Trader Code|`string`|3|||
-|DepartmentCode|Department Code|`string`|4|||
-|PaymentTermCode|Payment Term Code|`string`|8|||
-|ContractTermCode|Contract Term Code|`string`|8|||
-|ContractTermPortCode|Contract Term Port Code|`string`|8|||
-|ShipmentStatusCode|Shipment Status Code|`string`|2|||
-|SingleCcyConVal|Single Currency Contract Value|`boolean`|5|||
-|SingleCcyCosts|Single Currency Costs|`boolean`|5|||
+|TradingEntityId|Trading Entity ID|`string`||||
+|ContractId|Contract ID|`string`||||
+|ContractType|Contract Type|`string`|||`P` or `S`|
+|ContractStatus|Contract Status|`string`|||`O`, `C` or `Q`|
+|ContractApproved|Contract Approved|`boolean`||||
+|CounterpartyCode|Counterparty Code|`string`||||
+|CommodityCodePart1|Commodity Code|`string`||||
+|CommodityCodePart2|Commodity Origin|`string`||||
+|CommodityCodePart3|Commodity Grade|`string`||||
+|CommodityCodePart4|Commodity Code Section 4|`string`||||
+|CommodityCodePart5|Commodity Code Section 5|`string`||||
+|TraderCode|Trader Code|`string`||||
+|DepartmentCode|Department Code|`string`||||
+|PaymentTermCode|Payment Term Code|`string`||||
+|ContractTermCode|Contract Term Code|`string`||||
+|ContractTermPortCode|Contract Term Port Code|`string`||||
+|ShipmentStatusCode|Shipment Status Code|`string`||||
+|SingleCcyConVal|Single Currency Contract Value|`boolean`||||
+|SingleCcyCosts|Single Currency Costs|`boolean`||||
 |RateOfExchangeDate|Rate of Exchange Date|`number`||||
-|ValuationPeriod|Valuation Period|`string`|-|||
+|ValuationPeriod|Valuation Period|`string`||||
 
 
 + Request (application/json)
@@ -4138,7 +4138,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ShipmentStatusCode: D (string)
 + SingleCcyConVal: true (boolean)
 + SingleCcyCosts: false (boolean)
-+ RateOfExchangeDate: 20162810 (number)
++ RateOfExchangeDate: 20161028 (number)
 + ValuationPeriod: AUG16 (string)
 
 ## PhysicalTradeValRequestInfo (object)
