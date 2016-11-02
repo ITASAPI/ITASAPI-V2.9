@@ -3177,9 +3177,9 @@ The body of the request can contain multiple values delimited by double pipe "&#
     + Attributes (405 MethodNotAllowedMessage)
 
 
-## Physical Trade Valuation Response [/Valuation/Physical/PhysicalTradeValResponse/{RequestId}]
-`GET` Trade Valuations from Request Query
-### Read Physical Trades Valuation Response  [GET]
+## Physical Trade Valuation List [/Valuation/Physical/PhysicalTradeValList/{RequestId}]
+`GET` Trade Valuations List from Request Query
+### List Physical Trades Valuation  [GET]
  
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -3224,6 +3224,47 @@ The body of the request can contain multiple values delimited by double pipe "&#
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data (PhysicalTradeValList)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
+## Physical Trades Valuation List Summary [/Valuation/Physical/PhysicalTradeValListSummary/{RequestId}]
+`GET` Summary Valuations List from Request Query
+### List Physical Trades Valuation Summary  [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|RequestId|Request ID|`number`|||Required|
+|CounterpartyCode|Counterparty Code|`string`|10|||
+|CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
+|TraderCode|Trader Code|`string`|3|||
+|DepartmentCode|Department Code|`string`|4|||
+|PaymentTermCode|Payment Term Code|`string`|8|||
+|ContractTermCode|Contract Term Code|`string`|8|||
+|ContractTermPortCode|Contract Term Port Code|`string`|8|||
+|ShipmentStatusCode|Shipment Status Code|`string`|2|||
+
+
++ Parameters
+    + RequestId (required, number, `10001`) ... Identify specific request ID.
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (PhysicalTradeValuesListSum)
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
@@ -4115,6 +4156,16 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ValuesInPnLCcy (ValuesInPnLCcy)
 + ValuesInContractCcy (ValuesInContractCcy)
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
+
+## PhysicalTradeValuesListSum (object)
++ CounterpartyCode: FOODSWAT.S (string)
++ CommodityFullCode: `CHE||PASO||55||QWE||RTY` (string)
++ TraderCode: JS (string)
++ DepartmentCode: NAD (string)
++ PaymentTermCode: INV30 (string)
++ ContractTermCode: DEL (string)
++ ContractTermPortCode: LIV (string)
++ ShipmentStatusCode: D (string)
 
 ## PhysicalTradeValQuery (object)
 + Query (PhysicalTradeValRequest)
