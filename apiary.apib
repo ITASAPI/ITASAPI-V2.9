@@ -3483,43 +3483,6 @@ A multipurpose object used by several endpoints
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
 
-## PhysicalTradeValue [/PhysicalTradeValue]
-A multipurpose object used by several endpoints. 
-
-### PhysicalTradeValue[GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|ContractId|Contract ID|`string`|10|||
-|TradingEntityId|Trading Entity ID|`string`|2|||
-|<b>Values In PnL Currency</b>|
-|ConValPnL|Contract Value PnL|`number`||||
-|CostValPnL|Cost Value PnL|`number`||||
-|ComsnValPnL|Commission Value PnL|`number`||||
-|PolValPnL|Pol Value PnL|`number`||||
-|FOPnL|Futures and Options PnL|`number`||||
-|FXPnL|Foreign Exchange PnL|`number`||||
-|MktValPnL|Market Value PnL|`number`||||
-|<b>Values In Contract Currency|
-|ConValContract|Contract Value Contract|`number`||||
-|CostValContract|Cost Value Contract|`number`||||
-|ComsnValContract|Commission Value Contract|`number`||||
-|PolValContract|Pol Value Contract|`number`||||
-|FOContract|Futures and Options Contract|`number`||||
-|FXContract|Foreign Exchange Contract|`number`||||
-|MktValContract|Market Value Contract|`number`||||
-|<b>Values In Functional Currency|
-|ConValFunctional|Contract Value Functional|`number`||||
-|CostValFunctional|Cost Value Functional|`number`||||
-|ComsnValFunctional|Commission Value Functional|`number`||||
-|PolValFunctional|Pol Value Functional|`number`||||
-|FOFunctional|Futures and Options Functional|`number`||||
-|FXFunctional|Foreign Exchange Functional|`number`||||
-|MktValFunctional|Market Value Functional|`number`||||
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (PhysicalTradeVal)
-
 ## TradeCode [/TradeCode]
 A multipurpose object used by several endpoints
 ### TradeCode[GET]
@@ -4217,7 +4180,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentsAcknowledged: true (boolean)
 + DocumentsAcknowledgedDate: `2015-06-01T00:00:00Z` (string)
 
-## PhysicalTradeValueVal (object)
+## PhysicalTradeVal (object)
 + ContractId: P00004.000 (string)
 + TradingEntityId: JT (string)
 + ValuesInPnLCcy (ValuesInPnLCcy)
