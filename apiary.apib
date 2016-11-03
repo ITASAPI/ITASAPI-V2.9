@@ -3257,9 +3257,9 @@ The body of the request can contain multiple values delimited by double pipe "&#
     + Attributes (405 MethodNotAllowedMessage)
 
 
-## Physical Trade Valuation List [/Valuation/Physical/PhysicalTradeValList/{RequestId}]
-`GET` Trade Valuations List from Request Query
-### List Physical Trades Valuation  [GET]
+## Physical Trades Valuation Results [/Valuation/Physical/PhysicalTradeValResults/{RequestId}]
+`GET` Trade Valuations Results from Request Query
+### Physical Trades Valuation Results  [GET]
  
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -3304,7 +3304,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (PhysicalTradeValList)
+        + Data (PhysicalTradeValResults)
         + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
@@ -3317,9 +3317,9 @@ The body of the request can contain multiple values delimited by double pipe "&#
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 MethodNotAllowedMessage)
 
-## Physical Trades Valuation List Summary [/Valuation/Physical/PhysicalTradeValListSummary/{RequestId}]
+## Physical Trades Valuation Results Summary [/Valuation/Physical/PhysicalTradeValListSummary/{RequestId}]
 `GET` Summary Valuations List from Request Query
-### List Physical Trades Valuation Summary  [GET]
+### Physical Trades Valuation Results Summary  [GET]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -3344,7 +3344,7 @@ The body of the request can contain multiple values delimited by double pipe "&#
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (PhysicalTradeValuesListSum)
+        + Data (PhysicalTradeValuesResultsSum)
         + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
@@ -4187,19 +4187,19 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ValuesInContractCcy (ValuesInContractCcy)
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
 
-## PhysicalTradeValList (object)
+## PhysicalTradeValResults (object)
 + ResquestId: 10001 (number)
 + RequestStatus: Active (string)
-+ PhysicalTradeValue (array [PhysicalTradeValuesList])
++ PhysicalTradeValue (array [PhysicalTradeValuesResults])
 
-## PhysicalTradeValuesList (object)
+## PhysicalTradeValuesResults (object)
 + ContractId: P00004.000 (string)
 + TradingEntityId: JT (string)
 + ValuesInPnLCcy (ValuesInPnLCcy)
 + ValuesInContractCcy (ValuesInContractCcy)
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
 
-## PhysicalTradeValuesListSum (object)
+## PhysicalTradeValuesResultsSum (object)
 + CounterpartyCode: FOODSWAT.S (string)
 + CommodityFullCode: `CHE||PASO||55||QWE||RTY` (string)
 + TraderCode: JS (string)
