@@ -3324,14 +3324,46 @@ The body of the request can contain multiple values delimited by double pipe "&#
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |RequestId|Request ID|`number`|||Required|
+|<b>CounterpartyList</b>|
 |CounterpartyCode|Counterparty Code|`string`|10|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>CommodityList</b>|
 |CommodityFullCode|`Composite Key` delimited by double pipe "&#124;&#124;"|`string`|50|Example <b><a href="/#reference/composite-key-examples/commodityfullcode">Composite Key</a></b>||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>TraderList</b>|
 |TraderCode|Trader Code|`string`|3|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>DepartmentList</b>|
 |DepartmentCode|Department Code|`string`|4|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>PaymentTermList</b>|
 |PaymentTermCode|Payment Term Code|`string`|8|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>ContractTermList</b>|
 |ContractTermCode|Contract Term Code|`string`|8|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>ContractTermPortList</b>|
 |ContractTermPortCode|Contract Term Port Code|`string`|8|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
+|<b>ShipmentStatusList</b>|
 |ShipmentStatusCode|Shipment Status Code|`string`|2|||
+|ValuesInPnLCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInContractCurrency|nnnnnnn|[array] of `object`||||
+|ValuesInFunctionalCurrency|nnnnnnn|[array] of `object`||||
 
 
 + Parameters
@@ -3489,8 +3521,8 @@ A multipurpose object used by several endpoints
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|CodeId|Trade Code|string|3|||
-|CodeDescription|Trade Code Description|string|60|||
+|CodeId|Trade Code|`string`|3|||
+|CodeDescription|Trade Code Description|`string`|60|||
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (TradeCode)
@@ -3501,11 +3533,59 @@ A multipurpose object used by several endpoints
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TradingEntityId|Trading Entity ID|string|2||Required|
+|TradingEntityId|Trading Entity ID|`string`|2||Required|
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (MasterDataTradingEntityId)
 
+
+## ValuesInContractCurrency [/ValuesInContractCurrency]
+A multipurpose object used by several endpoints
+### ValuesInContractCurrency [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|CurrencyCode|Currency Code|`string`|2||Required|
+|<b>CurrencyValues</b>|
+|ConValContract|Contract Value Contract|||||
+|CostValContract|Cost Value Contract|||||
+|ComsnValContract|Commission Value Contract|||||
+|PolValContract|Polarisation Value Contract|||||
+|FOContract|F&O Contract|||||
+|FXContract|FX Contract|||||
+|MktValContract|Market Value Contract|||||
+
+## ValuesInFunctionalCurrency [/ValuesInFunctionalCurrency]
+A multipurpose object used by several endpoints
+### ValuesInFunctionalCurrency [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|CurrencyCode|Currency Code|`string`|2||Required|
+|<b>CurrencyValues</b>|
+|ConValFunctional|Contract Value Functional|||||
+|CostValFunctional|Cost Value Functional|||||
+|ComsnValFunctional|Commission Value Functional|||||
+|PolValFunctional|Polarisation Value Functional|||||
+|FOFunctional|F&O Functional|||||
+|FXFunctional|FX Functional|||||
+|MktValFunctional|Market Value Functional|||||
+
+## ValuesInPnLCurrency [/ValuesInPnLCurrency]
+A multipurpose object used by several endpoints
+### ValuesInPnLCurrency [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|CurrencyCode|Currency Code|`string`|2||Required|
+|<b>CurrencyValues</b>|
+|ConValPnL|Contract Value PnL|||||
+|CostValPnL|Cost Value PnL|||||
+|ComsnValPnL|Commission Value PnL|||||
+|PolValPnL|Polarisation Value PnL|||||
+|FOPnL|F&O PnL|||||
+|FXPnL|FX PnL|||||
+|MktValPnL|Market Value PnL|||||
 
 # Group Composite Key Examples
 List of examples where a code is delimited by double pipe &#124;&#124; referenced as `Composite Key` description. Not that these endpoints are not accessable and are only here for reference purposes.
