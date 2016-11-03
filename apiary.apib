@@ -2968,7 +2968,7 @@ None.
     + Attributes (405 MethodNotAllowedMessage)
 
 ### Update StockMovement [PUT]
-`PUT` Information relating to the processing of the Order.
+`PUT` Update Information relating to the processing of the Order.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -3005,6 +3005,60 @@ None.
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
    + Attributes (StockMovement Flat)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes  
+        + Data 
+            + ReleaseId: 123 (number)
+        + Response (200 UpdateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 MethodNotAllowedMessage)
+
+### Delta Update StockMovement [PATCH]
+`PATCH` Update Information relating to the processing of the Order, where the field `ReleaseId` is the only required field, it cannot be updated but is used to cross reference the Id in the URI
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|ReleaseId|Release ID|`number`|||Required|
+|OrderAcknowledged|Has Order Been Aknowledged|`boolean`|5|||
+|NetLoadedWeight|Net Loaded Weight|`decimal`||||
+|NetPumpedWeight|Net Pumped Weight|`decimal`||||
+|NetDeliveredWeight|Net Delivered Weight|`decimal`||||
+|LoadedDate|Date Loaded|`datetime`|20|||
+|PumpedDate|Date Pumped|`datetime`|20|||
+|TargetStockUnitCode|Target Stock Unit Code|`string`|11|||
+|ArrivalDate|Arrival Date|`datetime`|20|||
+|ArrivalMemo|Arrival Memorandum|`string`|250|||
+|ArrivalWeight|Arrival Weight|`decimal`||||
+|LoadingStartDate|Loading Start Date|`datetime`|20|||
+|LoadingStartMemo|Loading Start Memorandum|`string`|250|||
+|LoadingEndDate|Loading End Date|`datetime`|20|||
+|LoadingPoint|Loading Point|`string`|250|||
+|FirstWeight|First Weight|`decimal`||||
+|FirstWeightWeighbridgeId|First Weight Weighbridge ID|`string`|10|||
+|FirstWeightId|First Weight ID|`string`|10|||
+|SecondWeight|Second Weight|`decimal`||||
+|SecondWeightWeighbridgeId|Second Weight Weighbridge ID|`string`|10|||
+|SecondWeightId|Second Weight ID|`string`|10|||
+
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + ReleaseId (required, number, `123`)
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+   + Attributes (StockMovement FlatUpdate)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes  
@@ -4331,6 +4385,30 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + SecondWeight: 10.00 (number)
 + SecondWeightWeighbridgeId: cde456 (string)
 + SecondWeightId: cde456 (string)
+
+## StockMovement FlatUpdate (object)
++ ReleaseId: 100 (number)
++ OrderAcknowledged: false (boolean)
++ NetLoadedWeight: 10.00 (number)
++ NetPumpedWeight: 10.00 (number)
++ NetDeliveredWeight: 10.00 (number)
++ LoadedDate: `2015-08-01T00:00:00Z` (string)
++ PumpedDate: `2015-08-01T00:00:00Z` (string)
++ TargetStockUnitCode: 5100.MEP (string)
++ ArrivalDate: `2015-08-01T00:00:00Z` (string)
++ ArrivalMemo: notes field (string)
++ ArrivalWeight: 10.00 (number)
++ LoadingStartDate: `2015-08-01T00:00:00Z` (string)
++ LoadingStartMemo: notes field (string)
++ LoadingEndDate: `2015-08-01T00:00:00Z` (string)
++ LoadingPoint: tring (string)
++ FirstWeight: 10.00 (number)
++ FirstWeightWeighbridgeId: abc123 (string)
++ FirstWeightId: abc123 (string)
++ SecondWeight: 10.00 (number)
++ SecondWeightWeighbridgeId: cde456 (string)
++ SecondWeightId: cde456 (string)
+
 
 ## StockToStockOrder (object)
 + ReleaseId: 12345 (number)
