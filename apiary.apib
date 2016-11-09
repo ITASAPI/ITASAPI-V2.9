@@ -3594,12 +3594,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## CommodityFullCode (object)
 + CommodityFullCode: CHE||CASO||47||QWE||RTY (required, string)
 
-## CommodityValueList (object)
-+ CommodityFullCode: CHE||CASO||47||QWE||RTY (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
-
 ## ContactDetails (object)
 + AddressLine1: Address Line #1 (string)
 + AddressLine2: Address Line #2 (string) 
@@ -3628,24 +3622,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentText: Document text example (string)
 + Status: F (string)
 + EDICode: abc123 (string)
-
-## ContractTermValueList (object)
-+ ContractTermCode: DEL (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
-
-## ContractTermPortValueList (object)
-+ ContractTermPortCode: LIV (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
-
-## CounterpartyValueList (object)
-+ CounterpartyCode: ABANI.P (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
 
 ## Country (object)
 + CountryId: GB (string)
@@ -3684,12 +3660,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CountryId: GB (string)
 + EDICode: 1234 (string)
 + Status: F (string)
-
-## DepartmentValueList (object)
-+ DepartmentCode: NAD (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
 
 ## DocumentDetails (object)
 + DocumentDate: `2015-07-01T00:00:00Z` (required, string)
@@ -3911,12 +3881,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Status: F (string)
 + NumberOfDaysCredit: 30 (number)
 
-## PaymentTermValueList (object)
-+ PaymentTermCode: INV30 (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
-
 ## PhysicalTrade (object)
 + ContractId: P00004.000 (string)
 + ContractType: P (string)
@@ -4000,64 +3964,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ValuesInContractCcy (ValuesInContractCcy)
 + ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
 
-## PhysicalTradeValResults (object)
-+ ResquestId: 10001 (number)
-+ RequestStatus: Active (string)
-+ PhysicalTradeValue (array [PhysicalTradeValuesResults])
-
-## PhysicalTradeValuesResults (object)
-+ ContractId: P00004.000 (string)
-+ TradingEntityId: JT (string)
-+ ValuesInPnLCcy (ValuesInPnLCcy)
-+ ValuesInContractCcy (ValuesInContractCcy)
-+ ValuesInFunctionalCcy (ValuesInFunctionalCcy) 
-
-## PhysicalTradeValuesResultsSum (object)
-+ ResquestId: 10001 (number)
-+ CounterpartyList (array [CounterpartyValueList])
-+ CommodityList (array [CommodityValueList])
-+ TraderList (array [TraderValueList])
-+ DepartmentList (array [DepartmentValueList])
-+ PaymentTermList (array [PaymentTermValueList])
-+ ContractTermList (array [ContractTermValueList])
-+ ContractTermPortList (array [ContractTermPortValueList])
-+ ShipmentStatusList (array [ShipmentStatusValueList])
-
-## PhysicalTradeValQuery (object)
-+ Query (PhysicalTradeValRequest)
-
-## PhysicalTradeValRequest (object)
-+ TradingEntityId: `JT||DT` (string)
-+ ContractId: P00004.000||P00085.001 (string)
-+ ContractType: P (string)
-+ ContractStatus: O||C (string)
-+ ContractApproved: true (boolean)
-+ CounterpartyCode: FOODSWAT.S||FOODCLOT.S (string)
-+ CommodityCodePart1: CHE||SPR (string)
-+ CommodityCodePart2: PASO||INCT (string)
-+ CommodityCodePart3: 55||77 (string)
-+ CommodityCodePart4: QWE||PTY (string)
-+ CommodityCodePart5: RTY||PLE (string)
-+ TraderCode: JS||AN (string)
-+ DepartmentCode: NAD||OMP (string)
-+ PaymentTermCode: INV30||INV40 (string)
-+ ContractTermCode: DEL||INT (string)
-+ ContractTermPortCode: LIV (string)
-+ ShipmentStatusCode: D||IT (string)
-+ SingleCcyConVal: true (boolean)
-+ SingleCcyCosts: false (boolean)
-+ RateOfExchangeDate: 20161028 (number)
-+ ValuationPeriod: AUG16 (string)
-
-## PhysicalTradeValRequestInfo (object)
-+ RequestId: 10001 (number)
-+ RequestTime: `2016-07-01T12:20:30Z` (string)
-+ RequestStatus: Pending (string)
-+ RequestQuery (PhysicalTradeValRequest)
-
-## PhysicalTradeValResponse (object)
-+ RequestId: 10001 (number)
-
 ## Port (object)
 + PortId: AQABA (required, string)
 + PortDescription: Aqaba (required, string)
@@ -4116,12 +4022,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## ShippingStatus (object)
 + ShippingStatusId: OR (string)
 + ShippingStatusDescription: On Road (string)
-
-## ShipmentStatusValueList (object)
-+ ShipmentStatusCode: D (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
 
 ## StockBatch (object)
 + StockBatchId: abc123 (string)
@@ -4261,12 +4161,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CodeId: AA (string)
 + CodeDescription: Against Actuals (string)
 
-## TraderValueList (object)
-+ TraderCode: JRH (string)
-+ ValuesInPnLCurrency (array [ValuesInPnLCurrency])
-+ ValuesInContractCurrency (array [ValuesInContractCurrency])
-+ ValuesInFunctionalCurrency (array [ValuesInFunctionalCurrency])
-
 ## TransactionBankAccount (object)
 + DocumentReference: CN1600001 (required, string)
 + OurAccount: ABCDEF.P (string)
@@ -4357,10 +4251,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + FXContract: 3900 (number)
 + MktValContract: 4800 (number)
 
-## ValuesInContractCurrency (object)
-+ CurrencyCode: GBP (string)
-+ CurrencyValues (ValuesInContractCcy)
-
 ## ValuesInFunctionalCcy (object)
 + ConValFunctional: 1000 (number)
 + CostValFunctional: 150 (number)
@@ -4370,10 +4260,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + FXFunctional: 1700 (number)
 + MktValFunctional: 2000 (number)
 
-## ValuesInFunctionalCurrency (object)
-+ CurrencyCode: USD (string)
-+ CurrencyValues (ValuesInFunctionalCcy)
-
 ## ValuesInPnLCcy (object)
 + ConValPnL: 3500 (number)
 + CostValPnL: 900 (number)
@@ -4382,10 +4268,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + FOPnL: 2500 (number)
 + FXPnL: 2900 (number)
 + MktValPnL: 3600 (number)
-
-## ValuesInPnLCurrency (object)
-+ CurrencyCode: USD (string)
-+ CurrencyValues (ValuesInPnLCcy)
 
 ## VATRate (object)
 + VatRateId: GS (string)
