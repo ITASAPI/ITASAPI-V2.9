@@ -3082,7 +3082,7 @@ Data endpoints for Trade Valuation
 |--------|-----------|----|----------|-----|----------|
 |ContractId|Contract ID|`string`|10|||
 |TradingEntityId|Trading Entity ID|`string`|2|||
-|<b>PnLCurrency</b>|
+|PnLCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |ConValPnL|Contract Value PnL|`number`||||
 |CostValPnL|Cost Value PnL|`number`||||
 |ComsnValPnL|Commission Value PnL|`number`||||
@@ -3090,7 +3090,7 @@ Data endpoints for Trade Valuation
 |FOPnL|Futures and Options PnL|`number`||||
 |FXPnL|Foreign Exchange PnL|`number`||||
 |MktValPnL|Market Value PnL|`number`||||
-|<b>ContractCurrency|
+|ContractCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |ConValContract|Contract Value Contract|`number`||||
 |CostValContract|Cost Value Contract|`number`||||
 |ComsnValContract|Commission Value Contract|`number`||||
@@ -3098,7 +3098,7 @@ Data endpoints for Trade Valuation
 |FOContract|Futures and Options Contract|`number`||||
 |FXContract|Foreign Exchange Contract|`number`||||
 |MktValContract|Market Value Contract|`number`||||
-|<b>SecondFunctionalCurrency|
+|FunctionalCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
 |ConValFunctional|Contract Value Functional|`number`||||
 |CostValFunctional|Cost Value Functional|`number`||||
 |ComsnValFunctional|Commission Value Functional|`number`||||
@@ -3630,6 +3630,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CurrencyId: GBP (string)
 + CurrencyDescription: British Pound (string)
 
+## CurrencyUSD (object)
++ CurrencyId: USD (string)
++ CurrencyDescription: `U.S. Dollar` (string)
+
 ## DeliveryInOrder (object)
 + ReleaseId: 12345 (number)
 + ExpedOrderDetails (ExpedCallOff)
@@ -3959,9 +3963,30 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PhysicalTradeVal (object)
 + ContractId: P00004.000 (string)
 + TradingEntityId: JT (string)
-+ PnLCurrency (ValuesInPnLCcy)
-+ ContractCurrency (ValuesInContractCcy)
-+ SecondFunctionalCurrency (ValuesInFunctionalCcy) 
++ PnLCurrency (Currency)
++ ConValPnL: 3500 (number)
++ CostValPnL: 900 (number)
++ ComsnValPnL: 1200 (number)
++ PolValPnL: 1700 (number)
++ FOPnL: 2500 (number)
++ FXPnL: 2900 (number)
++ MktValPnL: 3600 (number)
++ ContractCurrency (CurrencyUSD)
++ ConValContract: 4050 (number)
++ CostValContract: 200 (number)
++ ComsnValContract: 3000 (number)
++ PolValContract: 100 (number)
++ FOContract: 3750 (number)
++ FXContract: 3900 (number)
++ MktValContract: 4800 (number)
++ FunctionalCurrency (Currency) 
++ ConValFunctional: 1000 (number)
++ CostValFunctional: 150 (number)
++ ComsnValFunctional: 2000 (number)
++ PolValFunctional: 2500 (number)
++ FOFunctional: 3000 (number)
++ FXFunctional: 1700 (number)
++ MktValFunctional: 2000 (number)
 
 ## Port (object)
 + PortId: AQABA (required, string)
